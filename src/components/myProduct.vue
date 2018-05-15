@@ -24,9 +24,6 @@
       return {
         demo1: '全部订单'
       }
-    },
-    methods: {
-     
     }
   }
 </script>
