@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wx-body">
     <div class="text-center p1">微信</div>
     <div>
       <search
@@ -11,7 +11,7 @@
     </div>
     <div class="p3px">
       <div 
-        class="p3px border-b"
+        class="p-8-10 border-b"
         v-for="(item, index) in noticeList" 
         :key="index">
         <span></span>
@@ -54,13 +54,13 @@ export default {
         name: 'snail',
         desc: '快去睡觉'
       }
-    ];
+    ]
   }
 }
 </script>
 
 <style lang="less">
-  body {
+  .wx-body {
     background-color: #fff;
   }
   .p3px {

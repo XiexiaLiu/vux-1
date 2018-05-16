@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div>我</div>
+  <div class="wx-body">
+    <div class="text-center p1">我</div>
   </div>
 </template>
 
@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style lang="less">
-body {
-  background-color: #fbf9fe;
-}
+  .wx-body {
+    background-color: #fbf9fe;
+  }
 </style>
