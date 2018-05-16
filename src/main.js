@@ -5,6 +5,8 @@ import FastClick from 'fastclick'
 import VueRouter from 'vue-router'
 import App from './App'
 import appRouter from './router'
+import './styles/common.scss'// 引入常用的css
+import './styles/font.scss'// 引入常用的字体css
 Vue.use(VueRouter)
 console.log('1', appRouter)
 const routes = appRouter.options.routes
