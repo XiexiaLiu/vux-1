@@ -7,6 +7,16 @@ import App from './App'
 import appRouter from './router'
 import './styles/common.scss'// 引入常用的css
 import './styles/font.scss'// 引入常用的字体css
+import VueI18n from 'vue-i18n'
+Vue.use(VueI18n)// 通过插件的形式挂载
+
+const i18n = new VueI18n({
+  locale: 'zh-CN', // 语言标识
+  messages: {
+    'zh-CN': require('../docs/zh-CN'), // 中文语言包
+    'en-US': require('../docs/en') // 英文语言包
+  }
+})
 Vue.use(VueRouter)
 console.log('1', appRouter)
 const routes = appRouter.options.routes
@@ -22,5 +32,6 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   router,
+  i18n,
   render: h => h(App)
 }).$mount('#app-box')
