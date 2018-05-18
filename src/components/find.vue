@@ -3,39 +3,33 @@
     <div class="text-center p1">发现</div>
     <div>
       <group>
-        <cell :title="$t('My Account')" :value="$t('Protected')"></cell>
+        <cell :title="$t('MyAccount')" :value="$t('Protected')"></cell>
         <cell :title="$t('Money')" :is-loading="!money" :value="money"></cell>
         <cell :title="$t('Notifications')" disabled is-link></cell>
       </group>
       <group>
         <cell 
-        :title="$t('Title 001')" 
+        :title="$t('Title001')" 
         is-link
         :arrow-direction="showContent004 ? 'up' : 'down'"
         @click.native="showContent004 = !showContent004"
         ></cell>
-        <p class="slide" :class="showContent004?'animate':''">blablabla...<br/>blablabla...<br/>blablabla...<br/>blablabla...</p>
-        <cell :title="$t('message.title')" is-link></cell>
-        <cell :title="$t('Title 003')" is-link></cell>
+        <p class="slide" :class="showContent004?'animate':''">好吃的零食<br/>好吃的零食<br/>好吃的零食<br/>好吃的零食</p>
+        <cell 
+          :title="$t('message.title')"
+          is-link
+          link = "/running"
+          inline-desc = "点击进入运动品牌列表页"
+         ></cell>
+        <cell 
+          :title="$t('Title003')" is-link
+          link = "/smallRoutine"
+          inline-desc = "看看附近有哪些小程序"
+        ></cell>
       </group>
     </div>
   </div>
 </template>
-
-<i18n>
-My Account:
-  zh-CN: 我的账号
-Protected:
-  zh-CN: 保护中
-Notifications:
-  zh-CN: 通知
-Title 001:
-  zh-CN: 标题一
-扫一扫:
-  zh-CN: 标题二
-Title 003:
-  zh-CN: 标题三
-</i18n>
 
 <script>
   import { Cell, Group } from 'vux'
@@ -49,6 +43,17 @@ Title 003:
       return {
         money: null,
         showContent004: false
+      }
+    },
+    method: {
+      go (name, hasHome) {
+        console.log(name)
+        // this.showContent004 = !this.showContent004
+        if (!hasHome) {
+          this.$router.push(`/${name}`)
+        } else {
+          this.$router.push(`/components/${name}/home`)
+        }
       }
     }
   }

@@ -7,6 +7,8 @@ import notice from '@/components/notice'
 import address from '@/components/address'
 import find from '@/components/find'
 import my from '@/components/my'
+import running from '@/components/running'
+import smallRoutine from '@/components/smallRoutine'
 
 Vue.use(Router)
 // import Layout from 'layout'
@@ -53,6 +55,18 @@ export default new Router({
       name: 'my',
       title: '我',
       component: my
+    },
+    {
+      path: '/running',
+      name: 'running',
+      title: '运动品牌',
+      component: running
+    },
+    {
+      path: '/smallRoutine',
+      name: 'smallRoutine',
+      title: '附件小程序',
+      component: smallRoutine
     }
   ]
 })
